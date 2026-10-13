@@ -8,4 +8,3 @@ def pow(a, b):
     for i in range(b):
         resultado *= a
     return resultado
-
