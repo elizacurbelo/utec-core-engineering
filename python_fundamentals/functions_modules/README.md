@@ -1,3 +1,3 @@
-# Import a simple function
+# Calculator
 
-This program imports add() from add_0.py and prints the sum of 1 and 2.
+This program imports addition, subtraction, multiplication, and division functions from calculator_1.py.
