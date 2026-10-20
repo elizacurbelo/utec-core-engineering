@@ -6,9 +6,9 @@ def safe_print_list_integers(my_list=[], x=0):
         try:
             if not isinstance(my_list[i], int) or isinstance(my_list[i], bool):
                 continue
-            print("{:d}".format(my_list[i]), end="")
+            print("{:d}".format(my_list[i]), end="", flush=True)
             count += 1
-        except IndexError:
-            break
+        except TypeError:
+            continue
     print()
     return count
