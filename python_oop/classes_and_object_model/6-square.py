@@ -1,4 +1,3 @@
-cat > 6-square.py <<'EOF'
 #!/usr/bin/env python3
 """Defines a Square class with string representation."""
 
@@ -18,7 +17,7 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """Set the square size after validation."""
+        """Set the square size."""
         if type(value) is not int:
             raise TypeError("size must be an integer")
         if value < 0:
@@ -32,7 +31,7 @@ class Square:
 
     @position.setter
     def position(self, value):
-        """Set the square position after validation."""
+        """Set the square position."""
         if (type(value) is not tuple or len(value) != 2
                 or any(type(n) is not int or n < 0 for n in value)):
             raise TypeError(
@@ -41,11 +40,11 @@ class Square:
         self.__position = value
 
     def area(self):
-        """Return the current square area."""
+        """Return the square area."""
         return self.__size * self.__size
 
     def my_print(self):
-        """Print the square using the # character."""
+        """Print the square using #."""
         if self.__size == 0:
             print()
         else:
@@ -53,11 +52,10 @@ class Square:
                 print(" " * self.__position[0] + "#" * self.__size)
 
     def __str__(self):
-        """Return the square representation as a string."""
+        """Return the square as a string."""
         if self.__size == 0:
             return ""
         spaces = " " * self.__position[0]
         lines = [spaces + "#" * self.__size
                  for row in range(self.__size)]
         return "\n" * self.__position[1] + "\n".join(lines)
-EOF
