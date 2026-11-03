@@ -1,3 +1,4 @@
+cat > 6-square.py <<'EOF'
 #!/usr/bin/env python3
 """Defines a Square class with string representation."""
 
@@ -35,7 +36,7 @@ class Square:
         if (type(value) is not tuple or len(value) != 2
                 or any(type(n) is not int or n < 0 for n in value)):
             raise TypeError(
-                "position must be a tuple of 2 positive integer"
+                "position must be a tuple of 2 positive integers"
             )
         self.__position = value
 
@@ -59,3 +60,4 @@ class Square:
         lines = [spaces + "#" * self.__size
                  for row in range(self.__size)]
         return "\n" * self.__position[1] + "\n".join(lines)
+EOF
